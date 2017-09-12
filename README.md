@@ -12,4 +12,5 @@ This project is a collection of malware signatures for [KicomAV](https://github.
 ## Author
 
 **Kei Choi** : [http://github.com/hanul93](http://github.com/hanul93)
+
 **Chan-Gyeong Pak** : [https://github.com/pck886](https://github.com/pck886)
