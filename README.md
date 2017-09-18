@@ -13,3 +13,4 @@ This project is a collection of malware signatures for [KicomAV](https://github.
 
 + **Kei Choi** : [http://github.com/hanul93](http://github.com/hanul93)
 + **Chan-Gyeong Pak** : [https://github.com/pck886](https://github.com/pck886)
++ **Si-Hyun Kwon** : [https://github.com/Dolpario](https://github.com/Dolpario)
