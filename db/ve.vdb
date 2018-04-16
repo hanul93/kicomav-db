@@ -71,3 +71,10 @@
 #------------------------------------------------------------------------------
 00037fcb:03,0000,0080,9435139f:03,a000,0080,14d5081b:Worm.Win32.WBNA.he  # 06a2716ae04f69a77482ddda4dd70b627b4c6e400f5170883d4491d8e963cba5, 01aa9f449c53bc452a83e9f7a2b058010b1607dfaa61b5c2c98bc5bd0df77d67  # VB
 000268a0:02,0000,0080,f440988f:03,3000,0080,19453c4e:Trojan-Ransom.Win32.Cryptoff.i  # f35173462da0e5237a2947f1f65b681eee3e4171e0f5fb89eadb91c927d9ee3c, 14962382b9dcab85c0cbdeaf09f2b971e5063dc94f324f43d2796ad2acef7720
+#------------------------------------------------------------------------------
+# 2018.04.16
+#------------------------------------------------------------------------------
+0002680c:02,0000,0018,72bd34f6:03,08b3,0070,24e0dfe8:Trojan-Downloader.Win32.Adload.d  # 006eef567298a5827a047b1747105bede7dae5acfa57c1014d29b979e76dd5fc, 0d049798288af8ce67d39ea188e6d35be30269ddbe15b322317c02f8d835443c  # VB
+000268ac:02,0000,0018,559cc38e:03,07a7,0070,88e1abbf:Trojan-Downloader.Win32.Adload.e  # 099cbb9b37ed007088c330fcb402815f79b50971c41837594dc4cffa3026ae20  # VB
+0002ff25:02,0000,0080,176d7995:03,3000,0080,fdcc6f71:Trojan.MSIL.Disfa.e  # 0262253ef73eed04e49f972bfe403834692d4bbed2e7633af94abec85e9f1c13, 08a19ac0c33b92b18cdc47ebe0434a1f82b14ea21a72c5d1bdfaa7b4c06b1422
+00004d5a:00,0000,0080,a1f92730:03,0018,001c,4abc1752:Trojan-Downloader.Win32.Donn.a  # 0393b9e50475ea49a4f3ba2976f5b5a0f45128967df2eacc5e38697667be3a35, 0b4a84b57d729007e6c9cafdf28abe1daf2488111770c99c4a684fb10a850edc
