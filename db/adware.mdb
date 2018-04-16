@@ -384,3 +384,13 @@
 # 2018.04.16
 #------------------------------------------------------------------------------
 44244:d4acad773e28564b31faca02b1b6695d:Trojan-Downloader.<p>.Adload.c  # E.C.S. International, 035fbb8105b054621f30c93843643d0a71c21cdba01925790d6f1898377c67c7
+58712:58e56d41f57e8e7c9b4f3376b9e43c2f:<n>WebToolbar.<p>.CrawBar.a  # Crawler, LLC, 00ecfa0574edde41fbfd08de55bca1623c6f9a504e9c83dd35add6599507a523
+11271:072ca6793642007c0105886ebb20a2eb:Trojan.<p>.CozyDuke.a  # Advanced Micro Devices, Inc., 01468b1d3e089985a4ed255b6594d24863cfd94a647329c631e4f4e52759f8a9
+11553:212dcea8adf55f171b6bb316d3f45122:<n>Downloader.<p>.DownloAdmin.a  # Super Click Interactive, 01b406c8f9b291b8ea65499cc2342120d38f10fc9134fa551992655f00caecda
+32688:b07f154ee6de1257a5452c6ce30fd1d7:Trojan.<p>.Cozybear.a  # Advanced Micro Devices, Inc., 036c5c0075d67f67fee546321f5b9c4f00d37aa9249ffe1627e71946bad4a3d1
+10908:9c2a0b7ebfa705cda4ab333b8d861304:<n>AdWare.<p>.ExtCrome.gen  # X-Media JSC, 0a0ff09e6e649eee961e4cf3bace13c37c191a2f2bfcc2cd5805123935745188
+18099:b346d011d80c1b5b9693a6b2fee64930:<n>AdWare.<p>.ExtCrome.a  # Yang Liwei, 0e0f1915bb63c60dfabdd2a8ef652d4b2e93e3b29bf5e2c7101a48a70fe59f2d
+53207:d7cf6380f4b236ed83e658c7c60addb2:Backdoor.<p>.Androm.l  # Mi You Network Technology Co., Ltd., 023e960ab4724bf0f2cd1a607bfeca4ae1e10411f3722d658be32c0ce060315e
+59592:c8e8d45458f3271fddaef50d48529519:<n>AdWare.<p>.ExtCrome.gen  # X - MEDIA JOINT STOCK COMPANY, 0b90e4cfcadae5a05f1f5f830a8ef1727aa6d8c238519c5825a555936b1123c4
+50393:d9c4d0b3cda48a5b7a5198b1b7b4e87f:Trojan.<p>.FakeBro.a  # Yongli Li, 0f7907665929d07ceabcda04bea7de0a8927123453d47c59a61823c5e92917fb
+505:f9017437facc23a89c12e13323f866b8:Trojan.<p>.Regsup.a  # Panda Security S.L, 0e7d821821be43f3161303cadff9e5ee4545668d4160f9cf90defb214e7deff9
