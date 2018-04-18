@@ -394,3 +394,8 @@
 59592:c8e8d45458f3271fddaef50d48529519:<n>AdWare.<p>.ExtCrome.gen  # X - MEDIA JOINT STOCK COMPANY, 0b90e4cfcadae5a05f1f5f830a8ef1727aa6d8c238519c5825a555936b1123c4
 50393:d9c4d0b3cda48a5b7a5198b1b7b4e87f:Trojan.<p>.FakeBro.a  # Yongli Li, 0f7907665929d07ceabcda04bea7de0a8927123453d47c59a61823c5e92917fb
 505:f9017437facc23a89c12e13323f866b8:Trojan.<p>.Regsup.a  # Panda Security S.L, 0e7d821821be43f3161303cadff9e5ee4545668d4160f9cf90defb214e7deff9
+#------------------------------------------------------------------------------
+# 2018.04.17
+#------------------------------------------------------------------------------
+32673:a17ff158c9eeb18d1565423e49b0687e:<n>Downloader.<p>.SimplyInstaller.gen  # One Floor App LTD, 02b0f8e16c6566354b6a66dc4f4bbdd0e3c98bf1a45ee8306ecd350e46a728d8
+20551:47506af760dde1adda43230e42d941e9:<n>Downloader.<p>.Morstar.a  # Apps Installer S.L., 03a158a6c075d4ae3a3cb821da59c5a6f953dbd8d80f140f17e8ab177a8ac463
