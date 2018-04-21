@@ -404,3 +404,18 @@
 #------------------------------------------------------------------------------
 24793:d9605eef44c750de951364fe86e80f78:Trojan-Ransom.<p>.Onion.a  # Solid Invest, 97be6754d010714743932afa3f4ea308e2f0b19212e8b8b150af7cdd3383f44b
 22623:5f58db98440ed487e6b80cbe41f5dd66:Trojan-FakeAV.<p>.SmartFortress2012.a  # Source Medical Solutions Inc., a4db67a74d7084d737994344dafb68f28b600da8c57d40cd4e9e231dc8db0674
+#------------------------------------------------------------------------------
+# 2018.04.21
+#------------------------------------------------------------------------------
+10185:c927dacadf5e88c4b8272d8fc159e710:<n>AdWare.<p>.Gamevance.bsrf  # Gamevance LLC, 4c07488f4997788151998d8232c8432d97a7b9a286705ba19f77fa69d75e517e
+20473:f94f9a144e464540e25d72f7f8eba868:<n>Downloader.<p>.DownloAdmin.d  # Topic Bridge, 5a66bfbacb73c08d21fb73f2d02fe11ac4b900641f45253ba2ad850cef2d853a
+16511:7f40403654e24ec8dcee93c894e42bda:<n>AdWare.<p>.Fiseria.w  # Bechiro S.L., 5da3bcf2cab01acc791aee9ce98bfe04e5fa533e3ab2a53721f0092e1597fe97
+23177:895afa376deb4b3c935fee82778808f6:Trojan.<p>.Cozybear.b  # Advanced Micro Devices, Inc., 418a21d49fe5bca8a3e050f039a0e2aa03db6d2de0fb49e3ff9d987f31b22dda
+20770:225154eeb742264a402133f9d2c42e17:Trojan.<p>.Cozybear.c  # Advanced Micro Devices, Inc., 64533e377bc50faa161ebf98639385c119de07dd22ed2525b26bfba608e4da95
+29601:a173312e881a8d7b79d38a0490761b98:Trojan.<p>.Cozybear.d  # Advanced Micro Devices, Inc., 4bcb2a5d99297b30f8ff00e08cf7330d5e2f69fc602bb317bf8e9f703a137a99
+22756:e45824ec7788e4c2d287b2dea2c27a77:Trojan.<p>.Cozybear.e  # Advanced Micro Devices, Inc., 5f827730c7bd155997121f023ca9775077a37a58111738fcb3213757170bd860
+21912:9855c47b2eb43a2cce2257c311933fa0:Trojan.<p>.Cozybear.f  # Advanced Micro Devices, Inc., 6b8d05118610f97f7fee199e29c193ef763f344b425a01b6cf471ec591ad4280
+59509:75e84405d432c051eeeb9cde922d13d3:<n>AdWare.<p>.DelBar.a  # Montiera Technologies LTD, afc3a56884a203c8351098f217383d7397ede85580e1ce6dd54ad59f327bed69
+23525:e55b5839aba7463bc1b922392d9a1fe7:<n>Downloader.<p>.DownloAdmin.e  # Deepwell, 73d7dfa01b0a9f2f9b74d5838caf0f3bfa9c859d9e7dee5618ad4d1795353e98
+34815:ff8740e703aebdb4aa2b9c90f60562cf:<n>Downloader.<p>.DownloAdmin.f  # Safe Install Software, 755509b4b3be42dbe85f84b9253fe0bc67f06b48a34a6eaf046caf6ca68d14bb
+
