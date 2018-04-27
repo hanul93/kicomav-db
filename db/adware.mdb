@@ -428,4 +428,11 @@
 #------------------------------------------------------------------------------
 # 2018.04.25
 #------------------------------------------------------------------------------
-31009:217996cd407af666b272d27e6c1edfbb:Trojan.Win32.FakeMS.gen  # Microsoft(R) Windows Media Player, 66944e5a33e833b1eac335861ae43b6bcd1ca3e396bd636e935f0e99c8ee550c
+31009:217996cd407af666b272d27e6c1edfbb:Trojan.<p>.FakeMS.gen  # Microsoft(R) Windows Media Player, 66944e5a33e833b1eac335861ae43b6bcd1ca3e396bd636e935f0e99c8ee550c
+#------------------------------------------------------------------------------
+# 2018.04.27
+#------------------------------------------------------------------------------
+13549:ed34cea4c802c9972942de4669a0849e:<n>Downloader.<p>.DownloAdmin.h  # TRUSTED INSTALL SOFTWARE, 48d58dfbb01419d1dcf4e202e7ed97694f1828cd2d3d2b73af481cfc691fe988
+25839:ef641648169c7515b4dc1eecb9cec85a:Trojan.<p>.CozyDuke.gen  # NVIDIA Corporation, 637cabc343e3ed5b447dccb13aa7caf4d3a3eb3cd617d360167f270ec34596ea (가짜 NVIDIA)
+5238:7614090adb003ac70c40eaddeec8dbf0:<n>AdWare.<p>.InstantAccess.a  # electronic-group, 64adb761eca501e7cda920ddf2ec06cdeb3b4ea69acfd42464f41e4ade433b76
+529:1102c379c0b4d47529b68eaf59a30b9d:Trojan.<p>.CozyDuke.gen  # Intel Corporation - Software and Firmware Products, 70ae2363191e8b20d1773ecc73afc2b9a5dd8247c7b97eecfd1378f3e7aabf92 (가짜 Intel)
