@@ -1,3 +1,13 @@
+rule IsPeFile {
+meta:
+    ref = "https://github.com/godaddy/yara-rules/blob/master/example.yara"
+strings:
+		$mz = "MZ"
+
+	condition:
+		$mz at 0 and uint32(uint32(0x3C)) == 0x4550
+}
+
 rule Adware_OutBrowse_gen
 {
 meta:
