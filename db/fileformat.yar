@@ -179,14 +179,14 @@ rule is_overay
 rule is_pyz
 {
     meta:
-        Format = "pyInstaller"
+        Format = "pyinstaller"
 
     strings:
         $s1 = "Installing PYZ"
         $s2 = "PYZ\x00\x03\xF3\x0D\x0A"
 
     condition:
-        is_pe and all of them
+        is_pe and 1 of them
 }
 
 rule is_autoit
@@ -199,7 +199,7 @@ rule is_autoit
         $s2 = "\x3E\x00\x3E\x00\x41\x00\x55\x00\x54\x00\x4F\x00\x49\x00\x54"
 
     condition:
-        is_pe and all of them
+        is_pe and 1 of them
 }
 
 rule is_upx
@@ -209,6 +209,119 @@ rule is_upx
 
     condition:
         pe.sections[0].name == "UPX0" and pe.sections[1].name == "UPX1"
+}
+
+
+rule is_aspack
+{
+    meta:
+        Format = "aspack"
+
+    strings:
+        $s1 = ".aspack\x00"
+        $s2 = "ASPack"
+        $s3 = ".adata\x00"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_boomeranglistbuilder
+{
+    meta:
+        Format = "boomeranglistbuilder"
+
+    strings:
+        $s1 = ".boom\x00"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_ccg
+{
+    meta:
+        Format = "ccg"
+        // CCG Packer (Chinese Packer)
+
+    strings:
+        $s1 = ".ccg\x00"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_epack
+{
+    meta:
+        Format = "epack"
+
+    strings:
+        $s1 = "!EPack\x00"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_tsuloader
+{
+    meta:
+        Format = "tsuloader"
+
+    strings:
+        $s1 = ".tsuarch\x00"
+        $s2 = ".tsustub\x00"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_fsg
+{
+    meta:
+        Format = "fsg"
+
+    strings:
+        $s1 = "FSG!"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_gentee
+{
+    meta:
+        Format = "gentee"
+
+    strings:
+        $s1 = ".gentee\x00"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_kkrunchy
+{
+    meta:
+        Format = "kkrunchy"
+
+    strings:
+        $s1 = "kkrunchy\x00"
+
+    condition:
+        is_pe and 1 of them
+}
+
+rule is_imprec
+{
+    meta:
+        Format = "imprec"
+
+    strings:
+        $s1 = ".mackt\x00"
+
+    condition:
+        is_pe and 1 of them
 }
 
 
