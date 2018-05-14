@@ -217,13 +217,8 @@ rule is_aspack
     meta:
         Format = "aspack"
 
-    strings:
-        $s1 = ".aspack\x00"
-        $s2 = "ASPack"
-        $s3 = ".adata\x00"
-
     condition:
-        is_pe and 1 of them
+        pe.section_index(".adata") >= 0 or pe.section_index("ASPack") >= 0 or pe.section_index(".aspack") >= 0
 }
 
 rule is_boomeranglistbuilder
@@ -231,11 +226,8 @@ rule is_boomeranglistbuilder
     meta:
         Format = "boomeranglistbuilder"
 
-    strings:
-        $s1 = ".boom\x00"
-
     condition:
-        is_pe and 1 of them
+        pe.section_index(".boom") >= 0
 }
 
 rule is_ccg
@@ -244,11 +236,8 @@ rule is_ccg
         Format = "ccg"
         // CCG Packer (Chinese Packer)
 
-    strings:
-        $s1 = ".ccg\x00"
-
     condition:
-        is_pe and 1 of them
+        pe.section_index(".ccg") >= 0
 }
 
 rule is_epack
@@ -256,11 +245,8 @@ rule is_epack
     meta:
         Format = "epack"
 
-    strings:
-        $s1 = "!EPack\x00"
-
     condition:
-        is_pe and 1 of them
+        pe.section_index("!EPack") >= 0
 }
 
 rule is_tsuloader
@@ -268,12 +254,8 @@ rule is_tsuloader
     meta:
         Format = "tsuloader"
 
-    strings:
-        $s1 = ".tsuarch\x00"
-        $s2 = ".tsustub\x00"
-
     condition:
-        is_pe and 1 of them
+        pe.section_index(".tsuarch") >= 0 or pe.section_index(".tsustub") >= 0
 }
 
 rule is_fsg
@@ -285,7 +267,7 @@ rule is_fsg
         $s1 = "FSG!"
 
     condition:
-        is_pe and 1 of them
+        is_pe and @s1 == uint32(0x3C) + 8
 }
 
 rule is_gentee
@@ -293,11 +275,8 @@ rule is_gentee
     meta:
         Format = "gentee"
 
-    strings:
-        $s1 = ".gentee\x00"
-
     condition:
-        is_pe and 1 of them
+        pe.section_index(".gentee") >= 0
 }
 
 rule is_kkrunchy
@@ -305,11 +284,8 @@ rule is_kkrunchy
     meta:
         Format = "kkrunchy"
 
-    strings:
-        $s1 = "kkrunchy\x00"
-
     condition:
-        is_pe and 1 of them
+        pe.section_index("kkrunchy") >= 0
 }
 
 rule is_imprec
@@ -317,11 +293,129 @@ rule is_imprec
     meta:
         Format = "imprec"
 
-    strings:
-        $s1 = ".mackt\x00"
+    condition:
+        pe.section_index(".mackt") >= 0
+}
+
+rule is_maskpe
+{
+    meta:
+        Format = "maskpe"
 
     condition:
-        is_pe and 1 of them
+        pe.section_index(".MaskPE") >= 0
+}
+
+rule is_mew
+{
+    meta:
+        Format = "mew"
+
+    condition:
+        pe.section_index("MEW") >= 0
+}
+
+rule is_mpress
+{
+    meta:
+        Format = "mpress"
+
+    condition:
+        pe.section_index(".MPRESS1") >= 0 or pe.section_index(".MPRESS2") >= 0
+}
+
+rule is_neolite
+{
+    meta:
+        Format = "neolite"
+
+    condition:
+        pe.section_index(".neolite") >= 0 or pe.section_index(".neolit") >= 0
+}
+
+rule is_nspack
+{
+    meta:
+        Format = "nspack"
+
+    condition:
+        pe.section_index(".nsp1") >= 0 or pe.section_index(".nsp0") >= 0 or pe.section_index(".nsp2") >= 0 or
+        pe.section_index("nsp1") >= 0 or pe.section_index("nsp0") >= 0 or pe.section_index("nsp2") >= 0
+}
+
+rule is_pebundle
+{
+    meta:
+        Format = "pebundle"
+
+    condition:
+        pe.section_index("pebundle") >= 0 or pe.section_index("PEBundle") >= 0
+}
+
+rule is_pecompact
+{
+    meta:
+        Format = "pecompact"
+
+    condition:
+        pe.section_index("PEC2TO") >= 0 or pe.section_index("PECompact2") >= 0 or
+        pe.section_index("PEC2") >= 0 or pe.section_index("pec1") >= 0 or
+        pe.section_index("pec2") >= 0 or pe.section_index("PEC2MO") >= 0
+}
+
+
+rule is_pelock
+{
+    meta:
+        Format = "pelock"
+
+    condition:
+        pe.section_index("PELOCKnt") >= 0
+}
+
+rule is_perplex
+{
+    meta:
+        Format = "perplex"
+
+    condition:
+        pe.section_index(".perplex") >= 0
+}
+
+rule is_peshield
+{
+    meta:
+        Format = "peshield"
+
+    condition:
+        pe.section_index("PESHiELD") >= 0
+}
+
+rule is_petite
+{
+    meta:
+        Format = "petite"
+
+    condition:
+        pe.section_index(".petite") >= 0
+}
+
+rule is_pin
+{
+    meta:
+        Format = "pin"
+
+    condition:
+        pe.section_index(".pinclie") >= 0
+}
+
+rule is_procrypt
+{
+    meta:
+        Format = "procrypt"
+
+    condition:
+        pe.section_index("ProCrypt") >= 0
 }
 
 
