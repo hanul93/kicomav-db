@@ -6,7 +6,8 @@ import "pe"
 
 // PE ---------------------------------------------------------------
 
-rule is_pe {
+rule is_pe 
+{
     meta:
         ref = "https://github.com/godaddy/yara-rules/blob/master/example.yara"
         Format = "peexe"
@@ -162,6 +163,299 @@ rule is_ppt
         is_ole and 1 of them
 }
 
+// Other ------------------------------------------------------------
+
+rule is_nsis
+{
+    meta:
+        Format = "nsis"
+
+    strings:
+        $s1 = "\xEF\xBE\xAD\xDENullsoftInst"
+
+	condition:
+		$s1 at 4
+}
+
+rule is_elf
+{
+    meta:
+        Format = "elf"
+
+    strings:
+        $s1 = "\x7FELF"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_dex
+{
+    meta:
+        Format = "dex"
+
+    strings:
+        $s1 = "dex\x0A"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_rtf
+{
+    meta:
+        Format = "rtf"
+
+    strings:
+        $s1 = "{\\rt"
+
+	condition:
+		$s1 in ( 0 .. 4096 )
+}
+
+rule is_pdf
+{
+    meta:
+        Format = "pdf"
+
+    strings:
+        $s1 = "%PDF"
+
+	condition:
+		$s1 in ( 0 .. 4096 )
+}
+
+rule is_hwp3
+{
+    meta:
+        Format = "hwp3"
+
+    strings:
+        $s1 = "HWP Document File V"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_swf
+{
+    meta:
+        Format = "swf"
+
+    strings:
+        $s1 = "FWS"
+        $s2 = "CWS"
+
+	condition:
+		$s1 at 0 or $s2 at 0
+}
+
+rule is_gif
+{
+    meta:
+        Format = "gif"
+
+    strings:
+        $s1 = "GIF"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_png
+{
+    meta:
+        Format = "png"
+
+    strings:
+        $s1 = "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_3gg
+{
+    meta:
+        Format = "3gg"
+
+    strings:
+        $s1 = "\x00\x00\x00\x14\x66\x74\x79\x70"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_3g2
+{
+    meta:
+        Format = "3g2"
+
+    strings:
+        $s1 = "\x00\x00\x00\x20\x66\x74\x79\x70"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_3gp
+{
+    meta:
+        Format = "3gp"
+
+    strings:
+        $s1 = "3gp"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_rar
+{
+    meta:
+        Format = "rar"
+
+    strings:
+        $s1 = "Rar!"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_7z
+{
+    meta:
+        Format = "7z"
+
+    strings:
+        $s1 = "7z\xBC\xAF"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_gz
+{
+    meta:
+        Format = "gz"
+
+    strings:
+        $s1 = "\x1F\x8B\x08"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_xz
+{
+    meta:
+        Format = "xz"
+
+    strings:
+        $s1 = "\xFD7zXZ\x00"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_bzip2
+{
+    meta:
+        Format = "bzip2"
+
+    strings:
+        $s1 = "BZh"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_bzip1
+{
+    meta:
+        Format = "bzip1"
+
+    strings:
+        $s1 = "BZ0"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_xar
+{
+    meta:
+        Format = "xar"
+
+    strings:
+        $s1 = "xar!"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_cab
+{
+    meta:
+        Format = "cab"
+
+    strings:
+        $s1 = "MSCF"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_ace
+{
+    meta:
+        Format = "ace"
+
+    strings:
+        $s1 = "**ACE**"
+
+	condition:
+		$s1 at 7
+}
+
+rule is_inno
+{
+    meta:
+        Format = "inno"
+
+    strings:
+        $s1 = "zlb\x1A"
+
+	condition:
+		$s1 at 0
+}
+
+rule is_spck
+{
+    meta:
+        Format = "spck"
+
+    strings:
+        $s1 = "DUMPTHIN"
+        $s2 = "SPCK!it"
+
+	condition:
+		$s1 at 4 and $s2
+}
+
+rule is_jpg
+{
+    meta:
+        Format = "jpg"
+
+    strings:
+        $s1 = {FF D8 FF E0 ?? ?? 4A 46 49 46}
+        $s2 = {FF D8 FF E1 ?? ?? 45 78 69 66}
+        $s3 = {FF D8 FF E8 ?? ?? 53 50 49 46 46}
+
+	condition:
+		$s1 at 0 or $s2 at 0 or $s3 at 0
+}
 
 // -----------------------------------------------------------------
 // 2st format
@@ -186,7 +480,7 @@ rule is_pyz
         $s2 = "PYZ\x00\x03\xF3\x0D\x0A"
 
     condition:
-        is_pe and 1 of them
+        is_pe and 2 of them
 }
 
 rule is_autoit
@@ -199,7 +493,7 @@ rule is_autoit
         $s2 = "\x3E\x00\x3E\x00\x41\x00\x55\x00\x54\x00\x4F\x00\x49\x00\x54"
 
     condition:
-        is_pe and 1 of them
+        is_pe and 2 of them
 }
 
 rule is_upx
