@@ -211,6 +211,9 @@ rule is_upx
         pe.sections[0].name == "UPX0" and pe.sections[1].name == "UPX1"
 }
 
+// -----------------------------------------------------------------
+// ÂüÁ¶ : http://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/
+// -----------------------------------------------------------------
 
 rule is_aspack
 {
@@ -418,4 +421,159 @@ rule is_procrypt
         pe.section_index("ProCrypt") >= 0
 }
 
+rule is_rlpack
+{
+    meta:
+        Format = "rlpack"
+
+    condition:
+        pe.section_index(".RLPack") >= 0
+}
+
+rule is_rpcrypt
+{
+    meta:
+        Format = "rpcrypt"
+
+    condition:
+        pe.section_index("RCryptor") >= 0 or pe.section_index(".RPCrypt") >= 0
+}
+
+rule is_seausfx
+{
+    meta:
+        Format = "seausfx"
+
+    condition:
+        pe.section_index(".seau") >= 0
+}
+
+rule is_starforce
+{
+    meta:
+        Format = "starforce"
+
+    condition:
+        pe.section_index(".sforce3") >= 0
+}
+
+rule is_svkp
+{
+    meta:
+        Format = "svkp"
+
+    condition:
+        pe.section_index(".svkp") >= 0
+}
+
+rule is_themida
+{
+    meta:
+        Format = "themida"
+
+    condition:
+        pe.section_index("Themida") >= 0 or pe.section_index(".Themida") >= 0
+}
+
+rule is_pespin
+{
+    meta:
+        Format = "pespin"
+
+    condition:
+        pe.section_index(".taz") >= 0
+}
+
+rule is_pepack
+{
+    meta:
+        Format = "pepack"
+
+    condition:
+        pe.section_index("PEPACK!!") >= 0
+}
+
+rule is_packed
+{
+    meta:
+        Format = "packed"
+
+    condition:
+        pe.section_index(".packed") >= 0
+}
+
+rule is_upack
+{
+    meta:
+        Format = "upack"
+
+    condition:
+        pe.section_index(".Upack") >= 0 or pe.section_index(".ByDwing") >= 0
+}
+
+rule is_vmprotect
+{
+    meta:
+        Format = "vmprotect"
+
+    condition:
+        pe.section_index(".vmp0") >= 0 or pe.section_index(".vmp1") >= 0
+}
+
+rule is_vprotect
+{
+    meta:
+        Format = "vprotect"
+
+    condition:
+        pe.section_index("VProtect") >= 0
+}
+
+rule is_winlicense
+{
+    meta:
+        Format = "winlicense"
+
+    condition:
+        pe.section_index("WinLicen") >= 0
+}
+
+rule is_winzip
+{
+    meta:
+        Format = "winzip"
+
+    condition:
+        pe.section_index("_winzip_") >= 0
+}
+
+rule is_wwpack
+{
+    meta:
+        Format = "wwpack"
+
+    condition:
+        pe.section_index(".WWPACK") >= 0
+}
+
+rule is_yoda
+{
+    meta:
+        Format = "yoda"
+
+    condition:
+        pe.section_index(".yP") >= 0 or pe.section_index(".y0da") >= 0
+}
+
+rule is_bobsoftminidelphi
+{
+    meta:
+        Format = "bobsoftminidelphi"
+
+    strings:
+        $s1 = "TPF0\x0FTPasswordDialog\x0EPasswordDialog\x04"
+
+    condition:
+        is_pe and 1 of them
+}
 
