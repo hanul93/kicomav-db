@@ -29,6 +29,43 @@ rule is_dll
         pe.characteristics & pe.DLL
 }
 
+rule is_overay
+{
+    meta:
+        Format = "overlay"
+
+    condition:
+        pe.overlay.size > 0
+}
+
+rule is_net
+{
+    meta:
+        Format = ".net"
+
+	condition:
+		pe.imports ("mscoree.dll")
+}
+
+
+rule is_pe32
+{
+    meta:
+        Format = "exe_32bit"
+
+    condition:
+		is_pe and uint16(uint32(0x3C)+0x18) == 0x010B
+}
+
+rule is_pe64
+{
+    meta:
+        Format = "exe_64bit"
+
+    condition:
+		is_pe and uint16(uint32(0x3C)+0x18) == 0x020B
+}
+
 // ZIP --------------------------------------------------------------
 
 rule is_zip
@@ -37,10 +74,11 @@ rule is_zip
         Format = "zip"
 
     strings:
-        $pk = "PK\x03\x04"
+        $s1 = "PK\x03\x04"
 
     condition:
-        $pk at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_apk
@@ -174,7 +212,7 @@ rule is_nsis
         $s1 = "\xEF\xBE\xAD\xDENullsoftInst"
 
 	condition:
-		$s1 at 4
+		1 of them
 }
 
 rule is_elf
@@ -271,43 +309,20 @@ rule is_png
         $s1 = "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A"
 
 	condition:
-		$s1 at 0
+        $s1 at 0
 }
 
 rule is_3gg
 {
     meta:
-        Format = "3gg"
-
-    strings:
-        $s1 = "\x00\x00\x00\x14\x66\x74\x79\x70"
-
-	condition:
-		$s1 at 0
-}
-
-rule is_3g2
-{
-    meta:
-        Format = "3g2"
-
-    strings:
-        $s1 = "\x00\x00\x00\x20\x66\x74\x79\x70"
-
-	condition:
-		$s1 at 0
-}
-
-rule is_3gp
-{
-    meta:
         Format = "3gp"
 
     strings:
-        $s1 = "3gp"
+        $s1 = { 00 00 00 ?? 66 74 79 70 }
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_rar
@@ -319,7 +334,8 @@ rule is_rar
         $s1 = "Rar!"
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_7z
@@ -331,7 +347,8 @@ rule is_7z
         $s1 = "7z\xBC\xAF"
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_gz
@@ -343,7 +360,8 @@ rule is_gz
         $s1 = "\x1F\x8B\x08"
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_xz
@@ -355,31 +373,21 @@ rule is_xz
         $s1 = "\xFD7zXZ\x00"
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
-rule is_bzip2
+rule is_bzip
 {
     meta:
-        Format = "bzip2"
+        Format = "bzip"
 
     strings:
-        $s1 = "BZh"
+        $s1 = { 42 5A ?? ?? 31 41 59 26 }
 
 	condition:
-		$s1 at 0
-}
-
-rule is_bzip1
-{
-    meta:
-        Format = "bzip1"
-
-    strings:
-        $s1 = "BZ0"
-
-	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_xar
@@ -391,7 +399,8 @@ rule is_xar
         $s1 = "xar!"
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_cab
@@ -403,7 +412,8 @@ rule is_cab
         $s1 = "MSCF"
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_ace
@@ -415,7 +425,8 @@ rule is_ace
         $s1 = "**ACE**"
 
 	condition:
-		$s1 at 7
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_inno
@@ -427,7 +438,8 @@ rule is_inno
         $s1 = "zlb\x1A"
 
 	condition:
-		$s1 at 0
+        $s1 at 0 or
+        is_overay and 1 of them
 }
 
 rule is_spck
@@ -460,16 +472,6 @@ rule is_jpg
 // -----------------------------------------------------------------
 // 2st format
 // -----------------------------------------------------------------
-rule is_overay
-{
-    meta:
-        Format = "overlay"
-
-    condition:
-        pe.overlay.size > 0
-}
-
-
 rule is_pyz
 {
     meta:
@@ -493,7 +495,7 @@ rule is_autoit
         $s2 = "\x3E\x00\x3E\x00\x41\x00\x55\x00\x54\x00\x4F\x00\x49\x00\x54"
 
     condition:
-        is_pe and 2 of them
+        is_pe and 1 of them
 }
 
 rule is_upx
@@ -869,5 +871,78 @@ rule is_bobsoftminidelphi
 
     condition:
         is_pe and 1 of them
+}
+
+// -----------------------------------------------------------------
+// 컴파일러 (Visual Basic)
+// -----------------------------------------------------------------
+
+rule is_vb4
+{
+    meta:
+        Format = "vb4"
+
+    condition:
+        pe.imports("VB40032.DLL")
+}
+
+rule is_vb5
+{
+    meta:
+        Format = "vb5"
+
+    condition:
+        pe.imports("MSVBVM50.DLL")
+}
+
+rule is_vb6
+{
+    meta:
+        Format = "vb6"
+
+    condition:
+        pe.imports("MSVBVM60.DLL")
+}
+
+rule is_vb_native
+{
+    meta:
+        Format = "vb_native"
+
+    strings:
+        $s1 = {56 42 3? 21}
+
+    condition:
+        is_vb5 or is_vb6 and 
+        uint32(pe.rva_to_offset(uint32(@s1+0x30) - pe.image_base) + 0x20) != 0
+}
+
+rule is_vb_pcode
+{
+    meta:
+        Format = "vb_pcode"
+
+    strings:
+        $s1 = {56 42 3? 21}
+
+    condition:
+        is_vb5 or is_vb6 and 
+        uint32(pe.rva_to_offset(uint32(@s1+0x30) - pe.image_base) + 0x20) == 0
+}
+
+// -----------------------------------------------------------------
+// 컴파일러 (Visual C/C++)
+// -----------------------------------------------------------------
+
+rule is_vc
+{
+    meta:
+        Format = "vc"
+
+    strings:
+        $s1 = { 55 8B ?? 83 ?? ?? 56 FF 15 ?? ?? ?? ?? 8B ?? 8A ?? 3C ?? 75 ?? 46 8A }
+
+    condition:
+        $s1 at pe.entry_point
 }
 
