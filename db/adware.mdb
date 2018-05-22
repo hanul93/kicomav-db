@@ -452,4 +452,11 @@
 #------------------------------------------------------------------------------
 # 2018.05.21
 #------------------------------------------------------------------------------
-41878:96a3be3cf272e017046d1b2674a52bd3:<n>AdWare.<p>.OptimizerMonitor.a  # Meqnugl Nuikgi, b04e84087229ff93eb19a7ab7a497a742b45980eca3844eac4f5e4d2f27590eb
+# 인증서 시리얼번호가 01
+41878:96a3be3cf272e017046d1b2674a52bd3:Trojan.<p>.Generic  # Meqnugl Nuikgi, b04e84087229ff93eb19a7ab7a497a742b45980eca3844eac4f5e4d2f27590eb
+#------------------------------------------------------------------------------
+# 2018.05.22
+#------------------------------------------------------------------------------
+484:e4015570163cb6c531b72fb5d0a8e452:<n>AdWare.<p>.Browext.d  # Pinball Corporation., 0cbce17706351838713ce49ddfcf3bf1e03352f73120ab609e54ea6e904043ef
+55384:58d8872daf1a31b6c4ad9abe41b09e07:<n>RiskTool.<p>.Ocna.a  # CHIP Digital GmbH, ec90e7c3ea36cf0b3f642c48547a17647af1ed8b1e9bc14b5fed6671d3fd0dfc
+61817:79f1b91e5bf675756e5fb13ae989426f:Trojan-FakeAV.<p>.PcPrivacyCleaner.a  # AntiSpywareSolutionPro Inc., fa3eb858eb96a4c862561f4661a8b83f732831d27ab2c100131a2d1d84704c69
