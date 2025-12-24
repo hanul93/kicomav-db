@@ -1,0 +1,15 @@
+# KicomAV Whitelist - False Positive Exclusion List
+#
+# Add malware names to exclude from detection (one per line)
+# Lines starting with # are comments
+#
+# Supported patterns:
+#   - Exact match: Dummy-Test-File (not a virus)
+#   - Wildcard: YARA.yaraex.*
+#
+# Example:
+# Dummy-Test-File (not a virus)
+# EICAR-Test-File (not a virus)
+# YARA.yaraex.*
+
+YARA.yaraex.IsPeFile
